@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exact.Criccard.Domain", "Exact.Criccard.Domain\Exact.Criccard.Domain.csproj", "{4486BA5E-994B-4329-8B9A-FFC007328289}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exact.Criccard.Services", "Exact.Criccard.Services\Exact.Criccard.Services.csproj", "{2C8861A2-D798-405E-AB8B-7DE4D45E17A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exact.Criccard.CricAPI", "Exact.Criccard.CricAPI\Exact.Criccard.CricAPI.csproj", "{F5A96024-12B0-49D0-A7F6-534ED96685BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exact.Criccard.WebApp", "Exact.Criccard.WebApp\Exact.Criccard.WebApp.csproj", "{C3F16EFB-29E0-4C23-8A3E-0C010E661991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4486BA5E-994B-4329-8B9A-FFC007328289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4486BA5E-994B-4329-8B9A-FFC007328289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4486BA5E-994B-4329-8B9A-FFC007328289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4486BA5E-994B-4329-8B9A-FFC007328289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C8861A2-D798-405E-AB8B-7DE4D45E17A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8861A2-D798-405E-AB8B-7DE4D45E17A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8861A2-D798-405E-AB8B-7DE4D45E17A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8861A2-D798-405E-AB8B-7DE4D45E17A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A96024-12B0-49D0-A7F6-534ED96685BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A96024-12B0-49D0-A7F6-534ED96685BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A96024-12B0-49D0-A7F6-534ED96685BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A96024-12B0-49D0-A7F6-534ED96685BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F16EFB-29E0-4C23-8A3E-0C010E661991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F16EFB-29E0-4C23-8A3E-0C010E661991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F16EFB-29E0-4C23-8A3E-0C010E661991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F16EFB-29E0-4C23-8A3E-0C010E661991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
