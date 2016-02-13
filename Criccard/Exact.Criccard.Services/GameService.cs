@@ -29,7 +29,7 @@ namespace Exact.Criccard.Services
                         var gameID = Guid.NewGuid();
                         context.Teams.Add(firstTeam);
                         context.Teams.Add(secondTeam);
-                        context.Games.Add(new Game { FistTeam = firstTeam, SecondTeam = secondTeam, Status = Domain.EnumCollections.GameStatus.Start, ID = gameID });
+                        context.Games.Add(new Game { FirstTeam = firstTeam, SecondTeam = secondTeam, Status = Domain.EnumCollections.GameStatus.Start, ID = gameID });
                         context.SaveChanges();
                         transaction.Commit();
                         return context.Games.FirstOrDefault(g => g.ID == gameID);

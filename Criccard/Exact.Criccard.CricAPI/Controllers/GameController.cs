@@ -1,5 +1,6 @@
 ﻿using Exact.Criccard.Domain.Entities;
 using Exact.Criccard.Domain.Interfaces;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,17 +27,13 @@ namespace Exact.Criccard.CricAPI.Controllers
             this.gameService = gameService;
         }
 
-        [HttpPost]
-        [ResponseType(typeof(Game))]
-        public IHttpActionResult CreateMatch(Game game)
+        [HttpGet]
+        public IHttpActionResult CreateMatch(string game)
         {
-
-            //Team firstTeam = new Team
-            //{
-            //    Name = "Atiq",
-            //    IsBowlFirst = true
-            //}, secondTeam = new Team { Name = "Shuvo" };
-            var result = gameService.CreateMatch(game.FistTeam, game.SecondTeam);
+            var gameObj = Newtonsoft.Json.JsonConvert.DeserializeObject<Game>(game);
+            if (gameObj == null)
+                return null;
+            var result = gameService.CreateMatch(gameObj.FirstTeam, gameObj.SecondTeam);
             return Json(result);
         }
     }

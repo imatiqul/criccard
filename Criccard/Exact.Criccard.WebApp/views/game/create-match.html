@@ -1,19 +1,19 @@
 ﻿<div class="row">
     <form class="form" ng-submit="submit()" data-role="form">
         <div class="form-group has-feedback">            
-            <input type="text" class="form-control" ng-model="model.firstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name">
+            <input type="text" class="form-control" ng-model="model.FirstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name">
             <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
             <span id="inputFirstStatus" class="sr-only">(First Team)</span>
-            <button type="button" class="btn btn-xs btn-default" ng-model="model.firstTeam.IsBowlFirst" ng-click="toggleBowling()">
-                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.firstTeam.IsBowlFirst)}}" ></span>
+            <button type="button" class="btn btn-xs btn-default" ng-model="model.FirstTeam.IsBowlFirst" ng-click="toggleBowling()">
+                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.FirstTeam.IsBowlFirst)}}" ></span>
             </button>            
         </div>
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" ng-model="model.secondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name">
+            <input type="text" class="form-control" ng-model="model.SecondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name">
             <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
             <span id="inputSecond" class="sr-only">(Second Team)</span>
-            <button type="button" class="btn btn-xs btn-default" ng-model="model.secondTeam.IsBowlFirst" ng-click="toggleBowling()">
-                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.secondTeam.IsBowlFirst)}}"></span>
+            <button type="button" class="btn btn-xs btn-default" ng-model="model.SecondTeam.IsBowlFirst" ng-click="toggleBowling()">
+                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.SecondTeam.IsBowlFirst)}}"></span>
             </button>            
         </div>
         <div class="form-group">

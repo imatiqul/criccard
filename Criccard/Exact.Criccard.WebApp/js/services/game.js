@@ -4,31 +4,27 @@ var cricCardServices = angular.module('cricCard.services', []);
 
 cricCardServices.service('GameService', function ($q, $http) {
     return {
-        createMatch: function (data) {
-            var host = '//localhost:87';
+        createMatch: function (game, onsuccess, onfailure) {
+            var host = '//localhost:8787';
 
-            var url = host + '/api/Game/createMatch';
-            var promise = function (url) {
+            var url = host + '/api/game/creatematch';
+            var data = JSON.stringify(game);
+            $http.get(
+                url,
+               {
+                   params: {
+                       game: data
+                   }
+               }
+                ).
+            success(function (result, status, headers, config) {
+                onsuccess(result);
+            }).
+            error(function (result, status, headers, config) {
+                onfailure(result);
+            });
 
-                var deffered = $q.defer();
 
-                $http({
-                    url: url,
-                    method: 'POST',
-                    data: data
-                }).
-                success(function (result) {
-                    deffered.resolve(data);
-                }).
-                error(function (error) {
-                    deffered.reject();
-                });
-
-                return deffered.promise;
-
-            };
-
-            return $q.all(promise);
         }
     }
 

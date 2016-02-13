@@ -10,7 +10,7 @@ namespace Exact.Criccard.Domain.Entities
     {
         [Key]
         public Guid ID { get; set; }
-        public Team FistTeam { get; set; }
+        public Team FirstTeam { get; set; }
         public Team SecondTeam { get; set; }
         public GameStatus Status { get; set; }
         public Language Language { get; set; }

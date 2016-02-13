@@ -4,22 +4,22 @@ var cricCardControllers = angular.module('cricCard.controllers', []);
 
 cricCardControllers.controller('GameCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 'GameService', function ($rootScope, $scope, $state, $stateParams, GameService) {
     $scope.model = {
-        firstTeam: {
+        FirstTeam: {
             Name: '',
             IsBowlFirst: false
         },
-        secondTeam: {
+        SecondTeam: {
             Name: '',
             IsBowlFirst: false
         }
     };
 
     $scope.toggleBowling = function () {
-        $scope.model.firstTeam.IsBowlFirst = !$scope.model.firstTeam.IsBowlFirst;
-        if (!$scope.model.firstTeam.IsBowlFirst) {
-            $scope.model.secondTeam.IsBowlFirst = true;
+        $scope.model.FirstTeam.IsBowlFirst = !$scope.model.FirstTeam.IsBowlFirst;
+        if (!$scope.model.FirstTeam.IsBowlFirst) {
+            $scope.model.SecondTeam.IsBowlFirst = true;
         } else {
-            $scope.model.secondTeam.IsBowlFirst = false;
+            $scope.model.SecondTeam.IsBowlFirst = false;
         }
     }
 
@@ -30,12 +30,21 @@ cricCardControllers.controller('GameCtrl', ['$rootScope', '$scope', '$state', '$
             return 'down';
         }
     }
-    $scope.submit = function () {
-        ////submitted
-        //var game = GameService.createMatch($scope.model);
-        //if (game)
-        //{
 
-        //}
+    $scope.onsuccess = function (result)
+    {
+
+    };
+
+    $scope.onfailure = function (result) {
+
+    };
+    $scope.submit = function () {
+        //submitted
+        var game = GameService.createMatch($scope.model, $scope.onsuccess, $scope.onfaulure);
+        if (game)
+        {
+
+        }
     };
 }]);
