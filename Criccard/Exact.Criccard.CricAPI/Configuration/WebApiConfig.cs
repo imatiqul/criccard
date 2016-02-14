@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Exact.Criccard.Domain.Interfaces;
+using StructureMap;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
 
-namespace Exact.Criccard.CricAPI
+namespace Exact.Criccard.CricAPI.Configuration
 {
     public static class WebApiConfig
     {

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Exact.Criccard.CricAPI.App_Start;
+using Exact.Criccard.CricAPI.Configuration;
 using System.Web.Http;
-using System.Web.Routing;
+using System.Web.Http.Dispatcher;
 
 namespace Exact.Criccard.CricAPI
 {
@@ -12,7 +10,7 @@ namespace Exact.Criccard.CricAPI
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            
+            StructuremapWebApi.Start();
             /// JSON Settings
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;

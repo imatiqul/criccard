@@ -15,13 +15,7 @@ namespace Exact.Criccard.CricAPI.Controllers
     public class GameController : ApiController
     {
         private IGameService gameService;
-        public GameController()
-        {
-            //TODO: Make an Application Instance to get AppSettings
-            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["CriccardModel"].ToString();
-            this.gameService = new Services.GameService(connectionString);
-        }
-
+        
         public GameController(IGameService gameService)
         {
             this.gameService = gameService;
