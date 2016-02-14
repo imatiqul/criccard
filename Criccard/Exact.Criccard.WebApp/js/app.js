@@ -2,7 +2,7 @@
 
 var cricCard = angular.module('cricCard', [
     'ui.router',
-    /*'cricCard.factories',*/
+    'cricCard.settings',
     'cricCard.services',
     'cricCard.controllers',
     'angular-loading-bar',
@@ -11,8 +11,6 @@ var cricCard = angular.module('cricCard', [
     cfpLoadingBarProvider.includeSpinner = true;
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-    //$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 });
 
 cricCard.run(
@@ -22,7 +20,9 @@ cricCard.run(
             $rootScope.$stateParams = $stateParams;
 
             $rootScope.model = {
-                gameID: ''
+                game: {},
+                overNumber: 0,
+                bowlNumber: 0
             };
         }
     ]

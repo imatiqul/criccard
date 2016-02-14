@@ -49,6 +49,7 @@
     <Content Include="js\directives\header.js" />
     <Content Include="js\routes\routes.js" />
     <Content Include="js\services\game.js" />
+    <Content Include="js\settings.js" />
     <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -60,8 +61,10 @@
   <ItemGroup>
     <Content Include="js\app.js" />
     <Content Include="index.html" />
+    <Content Include="views\alerts.html" />
     <Content Include="views\game\create-match.html" />
     <Content Include="views\game\game.html" />
+    <Content Include="views\game\play-match.html" />
     <Content Include="views\header.html" />
     <Content Include="Web.config" />
   </ItemGroup>

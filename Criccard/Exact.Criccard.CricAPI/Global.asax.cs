@@ -11,11 +11,16 @@ namespace Exact.Criccard.CricAPI
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             StructuremapWebApi.Start();
+
+            /// Database Initialize
+            Domain.Entities.CriccardModelInitializer.Initialize();
+
             /// JSON Settings
             var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.All;
             /// Logger Setup
             Domain.Logging.Logger.Setup();
+            
         }
     }
 }

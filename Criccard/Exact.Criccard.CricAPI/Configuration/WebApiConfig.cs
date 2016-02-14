@@ -16,9 +16,12 @@ namespace Exact.Criccard.CricAPI.Configuration
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{action}"
             );
+
+            var cors = new System.Web.Http.Cors.EnableCorsAttribute("http://localhost:89", "*", "*");
+
+            config.EnableCors();
         }
     }
 }

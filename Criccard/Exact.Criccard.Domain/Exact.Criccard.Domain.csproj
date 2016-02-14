@@ -56,10 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Entities\Bowl.cs" />
     <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\CriccardModel.cs" />
+    <Compile Include="Entities\CriccardModelInitializer.cs" />
     <Compile Include="Entities\Game.cs" />
     <Compile Include="Entities\Over.cs" />
     <Compile Include="Entities\Team.cs" />

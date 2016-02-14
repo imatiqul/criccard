@@ -2,30 +2,20 @@
 
 var cricCardServices = angular.module('cricCard.services', []);
 
-cricCardServices.service('GameService', function ($q, $http) {
+cricCardServices.service('GameService', ['$q', '$http', '$httpParamSerializerJQLike', 'CricSettings', function ($q, $http, $httpParamSerializerJQLike, CricSettings) {
     return {
-        createMatch: function (game, onsuccess, onfailure) {
-            var host = '//localhost:8787';
+        apiUrl: "//" + CricSettings.Host + ':' + CricSettings.PORT,
+        createMatch: function (data, onSuccess, onFailure) {
+            var url = this.apiUrl + '/api/game/creatematch';
 
-            var url = host + '/api/game/creatematch';
-            var data = JSON.stringify(game);
-            $http.get(
-                url,
-               {
-                   params: {
-                       game: data
-                   }
-               }
-                ).
-            success(function (result, status, headers, config) {
-                onsuccess(result);
-            }).
-            error(function (result, status, headers, config) {
-                onfailure(result);
+            $http.post(url, $httpParamSerializerJQLike(data), {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded', }
+            }).success(function (result, status, headers, config) {
+                onSuccess(result);
+            }).error(function (result, status, headers, config) {
+                onFailure(result);
             });
+        },
 
-
-        }
     }
-
-});
+}]);

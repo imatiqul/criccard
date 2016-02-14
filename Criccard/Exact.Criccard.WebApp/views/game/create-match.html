@@ -1,23 +1,35 @@
 ﻿<div class="row">
-    <form class="form" ng-submit="submit()" data-role="form">
-        <div class="form-group has-feedback">            
-            <input type="text" class="form-control" ng-model="model.FirstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name">
-            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-            <span id="inputFirstStatus" class="sr-only">(First Team)</span>
-            <button type="button" class="btn btn-xs btn-default" ng-model="model.FirstTeam.IsBowlFirst" ng-click="toggleBowling()">
-                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.FirstTeam.IsBowlFirst)}}" ></span>
-            </button>            
+    <form class="form create-match-form" ng-submit="createMatchForm.$valid && submit()" data-role="form" name="createMatchForm" novalidate>
+        <div class="form-group" ng-show="createMatchForm.$submitted && hasErrors">
+            <div class="alert alert-danger">
+                <ul>
+                    <li>
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{message}}
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" ng-model="model.SecondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name">
-            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-            <span id="inputSecond" class="sr-only">(Second Team)</span>
+            <input type="text" class="form-control" name="inputFirst" ng-model="model.FirstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
+            <button type="button" class="btn btn-xs btn-default" ng-model="model.FirstTeam.IsBowlFirst" ng-click="toggleBowling()">
+                <span class="glyphicon glyphicon-thumbs-{{selectcss(model.FirstTeam.IsBowlFirst)}}"></span>
+            </button>
+            <div ng-show="createMatchForm.$submitted || createMatchForm.inputFirst.$touched">
+                <div ng-show="createMatchForm.inputFirst.$error.required">Tell us your first team.</div>
+            </div>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" name="secondFirst" ng-model="model.SecondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
             <button type="button" class="btn btn-xs btn-default" ng-model="model.SecondTeam.IsBowlFirst" ng-click="toggleBowling()">
                 <span class="glyphicon glyphicon-thumbs-{{selectcss(model.SecondTeam.IsBowlFirst)}}"></span>
-            </button>            
+            </button>
+            <div ng-show="createMatchForm.$submitted || createMatchForm.secondFirst.$touched">
+                <div ng-show="createMatchForm.inputFirst.$error.required">Tell us your second team.</div>
+            </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Play Now</button>
+            <button type="submit" class="btn btn-primary" ng-disabled="!createMatchForm.$submitted && !createMatchForm.$valid">Play Now</button>
         </div>
     </form>
 </div>
