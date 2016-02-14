@@ -6,6 +6,7 @@ var cricCard = angular.module('cricCard', [
     'cricCard.services',
     'cricCard.controllers',
     'angular-loading-bar',
+    'angular.filter',
     'ngAnimate'
 ]).config(function (cfpLoadingBarProvider, $httpProvider) {
     cfpLoadingBarProvider.includeSpinner = true;

@@ -1,1 +1,77 @@
-﻿GameID {{$root.model.game.ID}}
+﻿<div class="row play-match">
+    <div class="col-sm-8 col-md-8 col-lg-10">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-10 pull-left">
+                <div ng-show="model.game.FirstTeam.IsBowlFirst">
+                    <div class="batting"> {{model.game.SecondTeam.Name}} - {{ model.score }}</div>
+                    <div class="bowling"> Vs. {{model.game.FirstTeam.Name}}</div>
+
+                </div>
+                <div ng-show="!model.game.FirstTeam.IsBowlFirst">
+                    <div class="batting"> {{model.game.FirstTeam.Name}} - {{ model.score }}</div>
+                    <div class="bowling"> Vs. {{model.game.SecondTeam.Name}}</div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-2 pull-right">
+                <button type="button" ng-click="play()" ng-disabled="paused" class="btn btn-lg btn-primary btn-block">BOWL <i class="glyphicon glyphicon-ban-circle"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="panel-group">
+                    <div class="panel panel-info" ng-repeat="(key, value) in model.bowls | groupBy: 'Over.OverNumber' | reverse">
+                        <div class="panel-heading">Over {{key}} </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a ng-repeat="bowl in value | reverse" ng-href="#" class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 col-lg-4 pull-left">
+                                            {{bowl.Over.OverNumber}}.{{bowl.Number}}
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 col-lg-4" ng-switch="bowl.Run">
+                                            <span ng-switch-when="1" ng-show="bowl.IsWide">
+                                                1 run from extra
+                                            </span>
+                                            <span ng-switch-when="1" ng-show="!bowl.IsWide">
+                                                1 run in the short cover
+                                            </span>
+                                            <span ng-switch-when="2">
+                                                2 runs on mid wicket
+                                            </span>
+                                            <span ng-switch-when="3">
+                                                3 runs on the leg side
+                                            </span>
+                                            <span ng-switch-when="4">
+                                                4 runs through the off side
+                                            </span>
+                                            <span ng-switch-when="5">
+                                                5 runs by cover drive
+                                            </span>
+                                            <span ng-switch-when="6">
+                                                6 runs over the long on
+                                            </span>
+                                            <span ng-switch-default>
+                                                No run was taken
+                                            </span>
+                                        </div>
+                                        <div class="col-sm-4 col-md-4 col-lg-4 pull-right">
+                                            <ng-pluralize count="bowl.Run"
+                                                          when="{'0': '0 Run',
+                     'one': '1 Run',
+                     'other': '{} Runs'}">
+                                            </ng-pluralize>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-4 col-md-4 col-lg-2">
+    Comments
+</div>

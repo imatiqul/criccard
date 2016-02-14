@@ -1,6 +1,6 @@
 cricCard.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/criccard/start');
 
     $stateProvider
         .state('cricCard', {
@@ -9,7 +9,7 @@ cricCard.config(['$stateProvider', '$urlRouterProvider', function ($stateProvide
         });
     $stateProvider
         .state('cricCard.createMatch', {
-            url: "/",
+            url: "/criccard/start",
             views: {
                 'cricCardWindow@': {
                     templateUrl: '/views/game/create-match.html',
@@ -19,7 +19,7 @@ cricCard.config(['$stateProvider', '$urlRouterProvider', function ($stateProvide
         });
     $stateProvider
         .state('cricCard.playMatch', {
-            url: "/:gameID/:overNumber/:bowlNumber",
+            url: "/criccard/:gameID/:overNumber/:bowlNumber",
             views: {
                 'cricCardWindow@': {
                     templateUrl: '/views/game/play-match.html',

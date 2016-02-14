@@ -15,11 +15,21 @@ namespace Exact.Criccard.CricAPI.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public IHttpActionResult CreateMatch([FromBody]Game game)
+        public IHttpActionResult MatchStart([FromBody]Game game)
         {
             if (game == null)
                 return null;
-            var result = gameService.CreateMatch(game.FirstTeam, game.SecondTeam);
+            var result = gameService.MatchStart(game.FirstTeam, game.SecondTeam);
+            return Json(result);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IHttpActionResult Play([FromBody]Team team)
+        {
+            if (team == null)
+                return null;
+            var result = gameService.Play(team);
             return Json(result);
         }
     }

@@ -5,3 +5,9 @@
 .create-match-form input.ng-valid.ng-touched {
     background-color: #78FA89;
 }
+.play-match .panel-body {
+    padding:0;
+}
+.play-match .list-group:last-child {
+    margin-bottom:0px;
+}

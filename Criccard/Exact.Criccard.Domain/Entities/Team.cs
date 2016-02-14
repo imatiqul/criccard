@@ -8,8 +8,8 @@ namespace Exact.Criccard.Domain.Entities
     {
         [Key]
         public int ID { get; set; }
-        public string Code { get; set; }
         [Required]
+        [MaxLength(450)]
         public string Name { get; set; }
         public bool IsBowlFirst { get; set; }
         public virtual Game Game { get; set; }
