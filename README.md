@@ -24,7 +24,6 @@ __How to run the application__
 
 > > Build the project with NuGet packages.
 > > Host into IIS and change the "Identity" of Application Pool to LocalSystem to access Attached Database which is in APP_DATA.
-> > "EntityFramework.SqlServer.dll" is required
 > > Change the AppSettings for CORS sites access & ConnectionStrings for Database.
 
 ###### Exact.CricCard.WebApp
