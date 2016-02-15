@@ -18,8 +18,8 @@ namespace Exact.Criccard.CricAPI.Configuration
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}"
             );
-
-            var cors = new System.Web.Http.Cors.EnableCorsAttribute("http://localhost:89", "*", "*");
+            var corsSites = System.Configuration.ConfigurationManager.AppSettings["EnabledCORSSites"].ToString();
+            var cors = new System.Web.Http.Cors.EnableCorsAttribute(corsSites, "*", "*");
 
             config.EnableCors();
         }
