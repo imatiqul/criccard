@@ -52,7 +52,7 @@ cricCardControllers.controller('GameCtrl', ['$rootScope', '$scope', '$state', '$
     $scope.onFailure = function (result) {
         $scope.hasSubmitted = false;
         $scope.hasErrors = true;
-        $scope.message = 'Fail to create match. Please contact your administrator.'
+        $scope.message = 'Failed to start the match. Please contact your administrator.'
     };
 
     $scope.submit = function () {
@@ -83,15 +83,17 @@ cricCardControllers.controller('MatchCtrl', ['$rootScope', '$scope', '$state', '
                 }
             }
         },
-        bowls: [{}],
+        bowls: [],
         score: 0
     };
     $scope.paused = false;
-    $scope.hasErrors = true;
+    $scope.hasErrors = false;
 
     $scope.init = function () {
-        $scope.model.game.FirstTeam.Score = 0;
-        $scope.model.game.SecondTeam.Score = 0;
+        if (!$scope.model.game)
+        {
+            $scope.paused = true;
+        }
     };
     $scope.init();
 
@@ -121,12 +123,12 @@ cricCardControllers.controller('MatchCtrl', ['$rootScope', '$scope', '$state', '
     $scope.onFailure = function (result) {
         $scope.paused = false;
         $scope.hasErrors = true;
-        $scope.message = 'Fail to create match. Please contact your administrator.'
+        $scope.message = 'Failed to play the game. Please contact your administrator.'
     };
 
     $scope.play = function () {
         var team = $scope.model.game.FirstTeam;
-        if (!$scope.model.game.FirstTeam.IsBowlFirst) {
+        if ($scope.model.game.FirstTeam && !$scope.model.game.FirstTeam.IsBowlFirst) {
             team = $scope.model.game.SecondTeam;
         }
 

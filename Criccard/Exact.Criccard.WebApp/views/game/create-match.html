@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="inputFirst" ng-model="model.FirstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
+            <input type="text" tabindex="1" class="form-control" name="inputFirst" ng-model="model.FirstTeam.Name" aria-describedby="inputFirst" placeholder="Enter First Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
             <button type="button" class="btn btn-xs btn-default" ng-model="model.FirstTeam.IsBowlFirst" ng-click="toggleBowling('FirstTeam')">
                 <span class="glyphicon glyphicon-thumbs-{{selectcss(model.FirstTeam.IsBowlFirst)}}"></span>
             </button>
@@ -23,7 +23,7 @@
             <p>Vs.</p>
         </div>
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="secondFirst" ng-model="model.SecondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
+            <input type="text" tabindex="2" class="form-control" name="secondFirst" ng-model="model.SecondTeam.Name" aria-describedby="inputSecond" placeholder="Enter Second Team Name" required ng-model-options="{ updateOn: 'default blur' }" />
             <button type="button" class="btn btn-xs btn-default" ng-model="model.SecondTeam.IsBowlFirst" ng-click="toggleBowling('SecondTeam')">
                 <span class="glyphicon glyphicon-thumbs-{{selectcss(model.SecondTeam.IsBowlFirst)}}"></span>
             </button>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" ng-disabled="hasSubmitted || !createMatchForm.$valid">Play Now</button>
+            <button type="submit" tabindex="3" class="btn btn-primary" ng-disabled="hasSubmitted || !createMatchForm.$valid">Play Now</button>
         </div>
     </form>
 </div>

@@ -1,7 +1,18 @@
 ﻿<div class="row play-match">
     <div class="col-sm-8 col-md-8 col-lg-10">
+        <div class="row" ng-show="hasErrors">
+            <div class="alert alert-danger">
+                <ul>
+                    <li>
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        {{message}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <div class="row">
-            <div class="col-sm-8 col-md-8 col-lg-10 pull-left">
+            <div class="col-sm-8 col-md-8 col-lg-10 pull-left" ng-show="model.game.FirstTeam">
                 <div ng-show="model.game.FirstTeam.IsBowlFirst">
                     <div class="batting"> {{model.game.SecondTeam.Name}} - {{ model.score }}</div>
                     <div class="bowling"> Vs. {{model.game.FirstTeam.Name}}</div>
@@ -20,7 +31,7 @@
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <div class="panel-group">
                     <div class="panel panel-info" ng-repeat="(key, value) in model.bowls | groupBy: 'Over.OverNumber' | reverse">
-                        <div class="panel-heading">Over {{key}} </div>
+                        <div class="panel-heading">Over </div>
                         <div class="panel-body">
                             <div class="list-group">
                                 <a ng-repeat="bowl in value | reverse" ng-href="#" class="list-group-item">
@@ -73,5 +84,5 @@
     </div>
 </div>
 <div class="col-sm-4 col-md-4 col-lg-2">
-    Comments
+
 </div>

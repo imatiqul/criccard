@@ -11,3 +11,12 @@
 .play-match .list-group:last-child {
     margin-bottom:0px;
 }
+
+.batting {
+    font-size:xx-large;
+    text-transform:uppercase;
+}
+.bowling {
+    font-size:medium;
+    text-transform:uppercase;
+}
