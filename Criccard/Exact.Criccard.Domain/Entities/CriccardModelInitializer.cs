@@ -12,6 +12,7 @@ namespace Exact.Criccard.Domain.Entities
         public static void Initialize()
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<CriccardModel>());
+            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
     }
 }
