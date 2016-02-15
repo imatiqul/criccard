@@ -4,7 +4,7 @@ __Project Structure__
 
 ###### Exact.CricCard.Domain
 
-> >It contains Core elements of the server side application. Here, Entities are implemented by using Entity Framework Code First, Logging is implemented by using Log4Net.
+> >It contains Core elements of the server side application. Here, Entities are implemented by using Entity Framework Code First with SQL Server LocalDB, Logging is implemented by using Log4Net.
 
 ###### Exact.CricCard.Services
 
@@ -19,6 +19,10 @@ __Project Structure__
 > >It c.ontains the client side application. It is implemented by using HTTP, CSS, Bootstrap, Angularjs, Angular Filter & Loading Bar modules
 
 __How to run the application__
+
+###### Prerequisites
+
+* SQL Server Express LocalDB
 
 ###### Exact.CricCard.CricAPI
 
